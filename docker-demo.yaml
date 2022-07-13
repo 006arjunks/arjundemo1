@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arjundemo1-deployment
+  labels:
+    app: arjundemo1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: arjundemo1
+  template:
+    metadata:
+      labels:
+        app: arjundemo1
+    spec:
+      containers:
+      - name: arjundemo1
+        image: 006arjunks/arjundemo1
+        ports:
+        - containerPort: 8080
